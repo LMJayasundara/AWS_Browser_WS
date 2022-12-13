@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const username = "ID001";
+        const URL = "ws://3.83.223.78:8888/"; // ubuntu Public IPv4 address
+        var reconn = null;
+        var socket = new WebSocket(URL);
+
+        socket.onopen = function(event) {
+            console.log('Connected to Server');
+        };
+
+        socket.onmessage = (event) => {
+            console.log(event.data);
+        };
+
+        socket.onerror = function(error) {
+            console.log('WebSocket error: ' + error);
+        };
+
+    </script>
+</body>
+</html>
